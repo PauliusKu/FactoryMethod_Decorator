@@ -6,11 +6,8 @@ public class CollateralReportPart extends ReportDecorator{
 
 
     public CollateralReportPart(Report report, int collateralId){
-        reportInfo = new ArrayList<>();
         this.report = report;
         this.collateralId = collateralId;
-
-        collectInfo();
     }
 
     @Override
@@ -19,11 +16,12 @@ public class CollateralReportPart extends ReportDecorator{
     }
 
     @Override
-    protected void collectInfo() {
-        this.reportInfo = report.reportInfo;
+    public ArrayList<ReportObject> collectInfo() {
+        ArrayList<ReportObject> reportInf = report.collectInfo();
 
-        reportInfo.add(new ReportObject("collateralId", Integer.toString(collateralId)));
-        reportInfo.add(new ReportObject("collateralType", "House"));
-        reportInfo.add(new ReportObject("collateralValue", "121000.00"));
+        reportInf.add(new ReportObject("collateralId", Integer.toString(collateralId)));
+        reportInf.add(new ReportObject("collateralType", "House"));
+        reportInf.add(new ReportObject("collateralValue", "121000.00"));
+        return reportInf;
     }
 }

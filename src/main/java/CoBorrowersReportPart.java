@@ -5,11 +5,8 @@ public class CoBorrowersReportPart extends ReportDecorator{
     final int coBorrowerId;
 
     public CoBorrowersReportPart(Report report, int coBorrowerId){
-        reportInfo = new ArrayList<>();
         this.report = report;
         this.coBorrowerId = coBorrowerId;
-
-        collectInfo();
     }
 
     @Override
@@ -18,12 +15,14 @@ public class CoBorrowersReportPart extends ReportDecorator{
     }
 
     @Override
-    protected void collectInfo() {
-        this.reportInfo = report.reportInfo;
+    public ArrayList<ReportObject> collectInfo() {
+        ArrayList<ReportObject> reportInf = report.collectInfo();
 
-        reportInfo.add(new ReportObject("coBorrowerId", Integer.toString(coBorrowerId)));
-        reportInfo.add(new ReportObject("relationType", "child"));
-        reportInfo.add(new ReportObject("coBorrowerName", "abcdefg"));
-        reportInfo.add(new ReportObject("coBorrowerLastName", "abcdefg"));
+        reportInf.add(new ReportObject("coBorrowerId", Integer.toString(coBorrowerId)));
+        reportInf.add(new ReportObject("relationType", "child"));
+        reportInf.add(new ReportObject("coBorrowerName", "abcdefg"));
+        reportInf.add(new ReportObject("coBorrowerLastName", "abcdefg"));
+
+        return reportInf;
     }
 }

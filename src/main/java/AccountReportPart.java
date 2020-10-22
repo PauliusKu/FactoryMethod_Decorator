@@ -5,11 +5,8 @@ public class AccountReportPart extends ReportDecorator{
     final int accountNumber;
 
     public AccountReportPart(Report report, int accountNumber){
-        reportInfo = new ArrayList<>();
         this.report = report;
         this.accountNumber = accountNumber;
-
-        collectInfo();
     }
 
     @Override
@@ -18,11 +15,12 @@ public class AccountReportPart extends ReportDecorator{
     }
 
     @Override
-    protected void collectInfo() {
-        this.reportInfo = report.reportInfo;
+    public ArrayList<ReportObject> collectInfo() {
+        ArrayList<ReportObject> reportInf = report.collectInfo();
 
-        reportInfo.add(new ReportObject("accountNumber", Integer.toString(accountNumber)));
-        reportInfo.add(new ReportObject("accountCurrency", "EUR"));
-        reportInfo.add(new ReportObject("accountBalance", "105.21"));
+        reportInf.add(new ReportObject("accountNumber", Integer.toString(accountNumber)));
+        reportInf.add(new ReportObject("accountCurrency", "EUR"));
+        reportInf.add(new ReportObject("accountBalance", "105.21"));
+        return reportInf;
     }
 }

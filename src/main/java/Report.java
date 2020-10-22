@@ -12,14 +12,14 @@ public abstract class Report {
         id = externalId;
 
         reportInfo = new ArrayList<>();
-        collectInfo();
     }
 
     protected abstract String getReportName();
 
-    protected void collectInfo(){
+    public ArrayList<ReportObject> collectInfo(){
         reportInfo.add(new ReportObject("reportName", reportName));
         reportInfo.add(new ReportObject("id", id));
+        return reportInfo;
     }
 
     public final void printReportInfo(){
