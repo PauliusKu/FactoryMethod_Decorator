@@ -10,6 +10,7 @@ public class CreditReport extends Report{
 
     @Override
     protected void collectInfo() {
+        super.collectInfo();
         reportInfo.add(new ReportObject("number", "123456"));
         reportInfo.add(new ReportObject("type", "commercial loan"));
         reportInfo.add(new ReportObject("customerId", "123456"));

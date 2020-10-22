@@ -26,5 +26,7 @@ public abstract class Report {
         for (ReportObject s : reportInfo) {
             System.out.println(s.name + ": " + s.value);
         }
+
+        System.out.println(" ");
     }
 }

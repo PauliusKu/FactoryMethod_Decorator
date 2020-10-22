@@ -5,5 +5,10 @@ public class MainTest {
         Report report = reportFactory.makeReport("123456");
 
         report.printReportInfo();
+
+        ReportFactory reportFactory2 = new ClientReportFactory();
+        Report report2 = reportFactory2.makeReport("654321");
+
+        report2.printReportInfo();
     }
 }

@@ -10,6 +10,7 @@ public class ClientReport extends Report{
 
     @Override
     protected void collectInfo() {
+        super.collectInfo();
         reportInfo.add(new ReportObject("name", "abc"));
         reportInfo.add(new ReportObject("lastname", "abc"));
         reportInfo.add(new ReportObject("address", "123"));
