@@ -1,6 +1,3 @@
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 public class MainTest {
     public static void main(String[] args) {
@@ -8,6 +5,5 @@ public class MainTest {
         Report report = reportFactory.makeReport("123456");
 
         report.printReportInfo();
-//        }
     }
 }
